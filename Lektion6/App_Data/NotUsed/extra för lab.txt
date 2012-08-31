@@ -1,6 +1,5 @@
 <!-- HTML User Details: -->
 
-@model Lab2.Models.Entities.User
 <div class="capclear2 aw post">
     <img src="@Url.Content("~/Content/Images/avatar.png")" alt="Alt" />
     <ul>
@@ -18,7 +17,6 @@
         </li>
     </ul>
 </div>
-
 
 <!-- CSS: -->
 
@@ -65,3 +63,29 @@ div .post
 /* end hide*/
 
 .aw {width:45em;}
+
+<!-- CSS Post Display Template -->
+
+ul.post
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 2em;
+}
+li.postfield
+{
+    width: 130px;
+    float: left;
+    margin: 0;
+    padding: 0 1em 0 1em;
+}
+li.postfield.body { font-style: italic; }
+
+<!-- HTML Post Display Template -->
+
+<ul class="post">
+    <li class="postfield">TitleShort</li>
+    <li class="postfield body">BodyShort</li>
+    <li class="postfield">CreateDate</li>
+</ul>

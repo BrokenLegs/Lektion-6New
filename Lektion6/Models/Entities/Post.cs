@@ -25,7 +25,20 @@ namespace Lektion6.Models.Entities
 
         public DateTime CreateDate { get; set; }
         public string Title { get; set; }
+        public string TitleShort 
+        { 
+            get 
+            {
+                return Title.Length > 20 ? Title.Substring(0, 17) + "..." : Title;
+            } 
+        }
         public string Body { get; set; }
+        public string BodyShort {
+            get
+            {
+                return Body.Length > 20 ? Body.Substring(0, 17) + "..." : Body;
+            }
+        }
         public List<PostTags> Tags { get; set; }
 
         public string FormattedTagList
