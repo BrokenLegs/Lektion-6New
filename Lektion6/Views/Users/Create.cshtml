@@ -7,7 +7,7 @@
 @using (Html.BeginForm()) { 
 <div>
     <p>
-        <span></span>
+        <span>@Html.LabelFor(u => u.UserName)</span>@Html.EditorFor(u => u.UserName)
     </p>
 </div>
 <div>
