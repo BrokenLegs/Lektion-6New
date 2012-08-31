@@ -59,6 +59,15 @@ namespace Lektion6.Models.Entities
             return userString;
         }
 
+        // Validering(nåja?) av User
+        public bool Validate()
+        {
+            if (!string.IsNullOrEmpty(UserName))
+                return true;
+
+            return false;
+        }
+
         public enum UserType
         {
             User,
