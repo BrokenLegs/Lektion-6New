@@ -165,8 +165,9 @@
   <ItemGroup>
     <Content Include="Views\Users\_UserDetailsPartial.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Views\Shared\DisplayTemplates\" />
+    <Content Include="Views\Shared\DisplayTemplates\Post.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
