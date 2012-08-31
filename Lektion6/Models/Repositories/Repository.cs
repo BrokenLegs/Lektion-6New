@@ -114,5 +114,11 @@ namespace Lektion6.Models.Repositories
 
             dataSource[typeof(T).FullName] = list;
         }
+
+        // Hämta en sorterad lista av take st. användare med början på skip + 1
+        public List<User> GetSortedUsers(int take, int skip)
+        {
+            return All<User>().OrderBy(u => u.UserName).Skip(skip).Take(take).ToList();
+        }
     }
 }
