@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Lektion6.Models.Entities.Abstract;
-using System.Security.Cryptography;
+using Lektion6.Utils;
 
 namespace Lektion6.Models.Entities
 {
@@ -22,9 +22,7 @@ namespace Lektion6.Models.Entities
         public string Password { 
             get 
             {
-                var data = Encoding.Unicode.GetBytes(UserName); // Hashfunktionen behöver en Byte-array som input
-                var hashData = new SHA1Managed().ComputeHash(data); // Här skapar vi vår hash
-                return Convert.ToBase64String(hashData); // Vi vill returnera en sträng-representation av hashen
+                return Helpers.CreateHash(UserName);
             } 
         }
         public string FirstName { get; set; }
