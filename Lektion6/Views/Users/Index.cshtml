@@ -1,10 +1,17 @@
 ﻿@using Lektion6.Models.Entities
+@using Lektion6.Models.SessionManager
 @{
     ViewBag.Title = "UserIndex";
     List<User> users = ViewBag.Users;
 }
 
 <h2>Users</h2>
+
+<p>
+    @if (SessionManager.CurrentUser != null && SessionManager.CurrentUser.Type == Lektion6.Models.Entities.User.UserType.Admin) { 
+        @Html.ActionLink("Create New User", "Create", "Users")
+    }
+</p>
 
 <table>
     <thead>
