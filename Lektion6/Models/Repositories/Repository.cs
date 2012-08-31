@@ -120,5 +120,11 @@ namespace Lektion6.Models.Repositories
         {
             return All<User>().OrderBy(u => u.UserName).Skip(skip).Take(take).ToList();
         }
+
+        // Hämta en användare baserat på dess användarnamn
+        public User GetUserByUserName(string userName)
+        {
+            return All<User>().Where(u => u.UserName == userName).FirstOrDefault();
+        }
     }
 }
