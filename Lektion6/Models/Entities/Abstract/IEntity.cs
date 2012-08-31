@@ -7,6 +7,6 @@ namespace Lektion6.Models.Entities.Abstract
 {
     public interface IEntity
     {
-        Guid ID { get; }
+        Guid ID { get; set; }
     }
 }

@@ -110,7 +110,11 @@ namespace Lektion6.Models.Repositories
             if (list.Contains(entity))
                 list[list.IndexOf(entity)] = entity;
             else
+            {
+                if (entity.ID == null || entity.ID == Guid.Empty)
+                    entity.ID = Guid.NewGuid();
                 list.Add(entity);
+            }
 
             dataSource[typeof(T).FullName] = list;
         }
