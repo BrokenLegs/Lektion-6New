@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using Lektion6.Models;
+using Lektion6.Models.SessionManager;
 
 namespace Lektion6.Controllers
 {
@@ -28,7 +29,7 @@ namespace Lektion6.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (Membership.ValidateUser(model.UserName, model.Password))
+                if (SessionManager.ValidateUser(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
@@ -56,6 +57,7 @@ namespace Lektion6.Controllers
 
         public ActionResult LogOff()
         {
+            SessionManager.SignOut();
             FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
