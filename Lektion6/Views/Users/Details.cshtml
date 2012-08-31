@@ -1,7 +1,7 @@
-﻿@model Lektion6.Models.Entities.User
+﻿@model Lektion6.ViewModels.UserDetailsViewModel
 @{
     ViewBag.Title = "UserDetails";
 }
 
 <h2>User Details</h2>
-@Html.Partial("_UserDetailsPartial", Model)
+@Html.Partial("_UserDetailsPartial", Model.User)

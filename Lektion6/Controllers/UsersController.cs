@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Lektion6.Models.Entities;
 using Lektion6.Models.Repositories;
+using Lektion6.ViewModels;
 
 namespace Lektion6.Controllers
 {
@@ -25,8 +26,10 @@ namespace Lektion6.Controllers
         // GET: /Details/
         public ActionResult Details(string id)
         {
-            User user = Repository.Instance.GetUserByUserName(id);
-            return View(user);
+            UserDetailsViewModel vm = new UserDetailsViewModel();
+            vm.User = Repository.Instance.GetUserByUserName(id);
+            vm.Posts = Repository.Instance.GetLatestPostForUser(vm.User.ID, 5);
+            return View(vm);
         }
 
     }
