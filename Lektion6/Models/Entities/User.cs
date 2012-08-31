@@ -19,6 +19,14 @@ namespace Lektion6.Models.Entities
 
         public Guid ID { get; set; }
         public string UserName { get; set; }
+        public string Password { 
+            get 
+            {
+                var data = Encoding.Unicode.GetBytes(UserName); // Hashfunktionen behöver en Byte-array som input
+                var hashData = new SHA1Managed().ComputeHash(data); // Här skapar vi vår hash
+                return Convert.ToBase64String(hashData); // Vi vill returnera en sträng-representation av hashen
+            } 
+        }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
