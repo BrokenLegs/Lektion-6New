@@ -355,7 +355,7 @@ div .post
     padding:0;
     list-style:none;
 }
-.capclear2 ul li{margin:1em 0}
+.capclear2 ul li{margin:1em 0;}
 
 .capclear2 ul{
     overflow:auto;/* this is the key for good browsers*/

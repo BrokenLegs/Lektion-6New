@@ -4,3 +4,20 @@
 }
 
 <h2>User Details</h2>
+<div class="capclear2 aw post">
+    <img src="@Url.Content("~/Content/Images/avatar.png")" alt="@Model.UserName" />
+    <ul>
+        <li>
+            <span>@Html.LabelFor(u => u.UserName):</span>@Html.DisplayFor(u => u.UserName)
+        </li>
+        <li>
+            <span>@Html.LabelFor(u => u.FirstName):</span>@Html.DisplayFor(u => u.FirstName)
+        </li>
+        <li>
+            <span>@Html.LabelFor(u => u.LastName):</span>@Html.DisplayFor(u => u.LastName)
+        </li>
+        <li>
+            <span>@Html.LabelFor(u => u.Type):</span>@Html.DisplayFor(u => u.Type)
+        </li>
+    </ul>
+</div>

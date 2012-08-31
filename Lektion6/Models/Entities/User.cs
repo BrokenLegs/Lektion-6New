@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Lektion6.Models.Entities.Abstract;
 using Lektion6.Utils;
+using System.ComponentModel;
 
 namespace Lektion6.Models.Entities
 {
