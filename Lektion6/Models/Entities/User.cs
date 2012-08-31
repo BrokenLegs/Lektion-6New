@@ -5,6 +5,7 @@ using System.Text;
 using Lektion6.Models.Entities.Abstract;
 using Lektion6.Utils;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Lektion6.Models.Entities
 {
@@ -19,6 +20,7 @@ namespace Lektion6.Models.Entities
         }
 
         public Guid ID { get; set; }
+        [Required(ErrorMessage="UserName is required!")]
         public string UserName { get; set; }
         public string Password { 
             get 
