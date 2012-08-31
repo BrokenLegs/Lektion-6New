@@ -31,7 +31,7 @@ namespace Lektion6.Controllers
             {
                 if (SessionManager.ValidateUser(model.UserName, model.Password))
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                    //FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {
@@ -58,7 +58,7 @@ namespace Lektion6.Controllers
         public ActionResult LogOff()
         {
             SessionManager.SignOut();
-            FormsAuthentication.SignOut();
+            //FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
         }
