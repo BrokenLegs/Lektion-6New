@@ -16,6 +16,7 @@ namespace Lektion6.Controllers
         public ActionResult Index()
         {
             List<User> users = Repository.Instance.GetSortedUsers(10, 0);
+            ViewBag.Users = users;
 
             return View();
         }
