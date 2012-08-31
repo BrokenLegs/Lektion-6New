@@ -165,7 +165,6 @@
   <ItemGroup>
     <Content Include="Views\Users\_UserDetailsPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Views\Shared\DisplayTemplates\Post.cshtml" />
   </ItemGroup>

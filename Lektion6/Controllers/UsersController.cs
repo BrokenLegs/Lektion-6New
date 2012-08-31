@@ -32,5 +32,11 @@ namespace Lektion6.Controllers
             return View(vm);
         }
 
+        //
+        // GET: /Create/
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
