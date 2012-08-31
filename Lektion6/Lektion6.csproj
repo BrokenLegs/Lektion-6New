@@ -76,6 +76,7 @@
     <Compile Include="Models\Repositories\Abstract\IRepository.cs" />
     <Compile Include="Models\Repositories\Helpers\DummyDataGenerators.cs" />
     <Compile Include="Models\Repositories\Repository.cs" />
+    <Compile Include="Models\SessionManager\SessionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
