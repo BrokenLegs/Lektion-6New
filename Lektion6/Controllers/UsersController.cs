@@ -38,5 +38,20 @@ namespace Lektion6.Controllers
         {
             return View();
         }
+
+        //
+        // POST: /Create/
+        [HttpPost]
+        public ActionResult Create(User user)
+        {
+            if (user.Validate())
+            {
+                Repository.Instance.Save<User>(user);
+
+                return RedirectToAction("Index", "Users");
+            }
+
+            return View();
+        }
     }
 }
