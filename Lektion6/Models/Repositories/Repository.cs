@@ -126,5 +126,11 @@ namespace Lektion6.Models.Repositories
         {
             return All<User>().Where(u => u.UserName == userName).FirstOrDefault();
         }
+
+        // Hämta en lista av take st. Post för en användare, senaste först
+        public List<Post> GetLatestPostForUser(Guid userID, int take)
+        {
+            return All<Post>().Where(p => p.CreatedByID == userID).Take(take).ToList();
+        }
     }
 }
