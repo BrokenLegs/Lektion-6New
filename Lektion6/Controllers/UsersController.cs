@@ -21,5 +21,13 @@ namespace Lektion6.Controllers
             return View();
         }
 
+        //
+        // GET: /Details/
+        public ActionResult Details(string id)
+        {
+            User user = Repository.Instance.GetUserByUserName(id);
+            return View(user);
+        }
+
     }
 }
