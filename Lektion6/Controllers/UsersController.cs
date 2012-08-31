@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Lektion6.Models.Entities;
 using Lektion6.Models.Repositories;
 using Lektion6.ViewModels;
+using Lektion6.Models.SessionManager;
 
 namespace Lektion6.Controllers
 {
@@ -36,6 +37,10 @@ namespace Lektion6.Controllers
         // GET: /Create/
         public ActionResult Create()
         {
+            if (SessionManager.CurrentUser == null || 
+                SessionManager.CurrentUser.Type != Models.Entities.User.UserType.Admin)
+                return RedirectToAction("Index", "Users");
+
             return View();
         }
 
@@ -44,6 +49,10 @@ namespace Lektion6.Controllers
         [HttpPost]
         public ActionResult Create(User user)
         {
+            if (SessionManager.CurrentUser == null ||
+                SessionManager.CurrentUser.Type != Models.Entities.User.UserType.Admin)
+                return RedirectToAction("Index", "Users");
+
             if (user.Validate())
             {
                 Repository.Instance.Save<User>(user);
